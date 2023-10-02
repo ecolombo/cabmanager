@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CabmanagerWebservice202309Application {
+public class CabmanagerWebserviceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CabmanagerWebservice202309Application.class, args);
+		SpringApplication.run(CabmanagerWebserviceApplication.class, args);
 	}
 
 }

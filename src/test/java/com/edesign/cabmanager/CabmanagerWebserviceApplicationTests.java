@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class CabmanagerWebservice202309ApplicationTests {
+class CabmanagerWebserviceApplicationTests {
 
 	@Test
 	void contextLoads() {
