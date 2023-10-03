@@ -19,6 +19,7 @@ public class CategoryService {
 	CategoryRepository categoryRepository;
 	
 	// Get all Categories
+	// public Page<Category> getCategories(int page, int size, String sort, String sortOrder) {
 	public Page<Category> getCategories(int page, int size, String sort, String sortOrder) {
 		Sort.Direction direction = sortOrder.equalsIgnoreCase("ASC") ? Sort.Direction.ASC : Sort.Direction.DESC;
 		Sort sortBy = Sort.by(direction,sort);
