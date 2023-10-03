@@ -34,6 +34,7 @@ public class CategoryService {
 	
 	// Add Category
 	public Category addCategory(Category category) {
+		System.out.println("[CategoryService.addCategory] Try to create category with name:"+category.getName());
 		if(categoryRepository.existsByName(category.getName()))
 			throw new BadRequestException("Category with this name already exists.");
 		return categoryRepository.save(category);
