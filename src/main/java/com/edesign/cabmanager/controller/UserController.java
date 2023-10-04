@@ -19,6 +19,7 @@ import com.edesign.cabmanager.entity.User;
 import com.edesign.cabmanager.service.UserService;
 
 // CRUD operations for user
+//todo: implement ResponseDto, exception handling etc.
 
 @RestController
 public class UserController {
@@ -53,9 +54,6 @@ public class UserController {
 	 */
 	@PostMapping("/users")
 	public User addUser(@RequestBody User user){
-		// Logintype will be elevated explicitly by Admin
-		if (user.getLoginType() == 1) user.setLoginType(0);
-
 		return userService.addUser(user);
 	}
 	
@@ -66,9 +64,6 @@ public class UserController {
 	 */
 	@PutMapping("/users")
 	public User updateUser(@RequestBody User user){
-		// Logintype will be elevated explicitly by Admin
-		if (user.getLoginType() == 1) user.setLoginType(0);
-		
 		return userService.updateUser(user);
 	}
 	

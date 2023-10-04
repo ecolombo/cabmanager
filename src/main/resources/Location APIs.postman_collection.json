@@ -1,0 +1,181 @@
+{
+	"info": {
+		"_postman_id": "a0df28b9-b80f-4a3d-9c48-7a5a814a6196",
+		"name": "Location APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29210091",
+		"_collection_link": "https://blue-meteor-75412.postman.co/workspace/202309_cabmanager~9cc4f7be-fe0e-4978-91f5-5fa82223fc48/collection/29210091-a0df28b9-b80f-4a3d-9c48-7a5a814a6196?action=share&source=collection_link&creator=29210091"
+	},
+	"item": [
+		{
+			"name": "Get all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8088/admins",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"admins"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Firenze Piazza del Duomo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Firenze Piazza del Duomo6\",\r\n    \"xCoord\": 4872800.183266161,\r\n    \"yCoord\": 1261093.273923791\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8088/cabmanager-webservice/api/locations",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"cabmanager-webservice",
+						"api",
+						"locations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Firenze Palazzo Pitti",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Firenze Piazza del Duomo7\",\r\n    \"xCoordinate\": 0,\r\n    \"yCoordinate\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8088/cabmanager-webservice/api/locations",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"cabmanager-webservice",
+						"api",
+						"locations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Firenze Piazza Signoria",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Firenze Piazza Signoria\",\r\n    \"xCoordinate\": 4872432.069435865,\r\n    \"yCoordinate\": 1261135.482776169\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8088/cabmanager-webservice/api/locations",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"cabmanager-webservice",
+						"api",
+						"locations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"adminId\": 5,\r\n        \"email\": \"admin1@simplilearn.com\",\r\n        \"password\": \"Admin@123\",\r\n        \"fullName\": \"Admistrator\",\r\n        \"loginType\": 1,\r\n        \"addedOn\": \"2023-08-27T17:41:41.981+00:00\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8088/admins",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"admins"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8088/admins/5",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"admins",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8088/admins/4",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"admins",
+						"4"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

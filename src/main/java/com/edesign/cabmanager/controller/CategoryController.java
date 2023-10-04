@@ -18,6 +18,7 @@ import com.edesign.cabmanager.entity.Category;
 import com.edesign.cabmanager.service.CategoryService;
 
 // CRUD operations for category
+// todo: implement ResponseDto, exception handling etc.
 
 @RestController
 public class CategoryController {

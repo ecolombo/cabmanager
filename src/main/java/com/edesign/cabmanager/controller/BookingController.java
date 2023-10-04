@@ -30,10 +30,14 @@ public class BookingController {
 	 * @return
 	 */
 	@GetMapping("/bookings")
-	public Page<Booking> getBookings(@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "10") int size, 
-			@RequestParam(defaultValue = "bookingId") String sort, @RequestParam(defaultValue = "ASC") String sortOrder){
-		return bookingService.getBookings(page,size, sort, sortOrder);
+	public ResponseDto getBookings(@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "10") int size, 
+			@RequestParam(defaultValue = "bookingId") String sort, @RequestParam(defaultValue = "ASC") String sortOrder){		
+		Page<Booking> paginatedResults = bookingService.getBookings(page, size, sort, sortOrder);
+		// todo: add response when no data found
+		ResponseDto response = new ResponseDto("Bookings found", new Date(), HttpStatus.OK.name(), paginatedResults); 	
+		return response;
 	}
+	
 	
 	/**
 	 * Get one booking
@@ -41,8 +45,10 @@ public class BookingController {
 	 * @return
 	 */
 	@GetMapping("/bookings/{bookingId}")
-	public Booking getBooking(@PathVariable int bookingId){
-		return bookingService.getBooking(bookingId);
+	public ResponseDto getBooking(@PathVariable int bookingId){
+		// todo: add response when no data found
+		ResponseDto response = new ResponseDto("Booking found", new Date(), HttpStatus.OK.name(), bookingService.getBooking(bookingId));
+		return response; 
 	}
 	
 	/**
@@ -51,9 +57,11 @@ public class BookingController {
 	 * @return
 	 */
 	@PostMapping("/bookings")
-	public Booking addBooking(@RequestBody Booking booking){
-		System.out.println("BOOKING: " + booking);
-		return bookingService.addBooking(booking);
+	public ResponseDto addBooking(@RequestBody Booking booking){
+		// todo: add response when conflict occurs
+		Booking resultBooking = bookingService.addBooking(booking);
+		ResponseDto response = new ResponseDto("Booking added", new Date(), HttpStatus.OK.name(), resultBooking);
+		return response;
 	}
 	
 	/**
@@ -62,8 +70,11 @@ public class BookingController {
 	 * @return
 	 */
 	@PutMapping("/bookings")
-	public Booking updateBooking(@RequestBody Booking booking){
-		return bookingService.updateBooking(booking);
+	public ResponseDto updateBooking(@RequestBody Booking booking){
+		// todo: add response if update not possible
+		Booking resultBooking = bookingService.updateBooking(booking);
+		ResponseDto response = new ResponseDto("Booking updated", new Date(), HttpStatus.OK.name(), resultBooking);
+		return response;
 	}
 	
 	/**
@@ -74,6 +85,7 @@ public class BookingController {
 	@DeleteMapping("/bookings/{bookingId}")
 	public ResponseDto updateBooking(@PathVariable int bookingId){
 		bookingService.deleteBooking(bookingId);
-		return new ResponseDto("Booking is deleted sucessfully with bookingId : "+bookingId, new Date(),HttpStatus.OK.name(),null);
+		ResponseDto response = new ResponseDto("Booking is deleted sucessfully with bookingId : "+bookingId, new Date(),HttpStatus.OK.name(),null); 
+		return response;
 	}
 }

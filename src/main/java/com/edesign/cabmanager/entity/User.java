@@ -31,21 +31,15 @@ public class User {
 	@Column(name="email")
 	private String email;
 	
-	@Column(name="password")
-	private String password;
-	
 	@Column(name="full_name")
 	private String fullName;
 	
 	@Column(name="phone")
 	private String phone;
-
-	@Column(name="login_type_identifier", columnDefinition = "integer default 1") // 0=user, 1=admin
-	private int loginType;
 	
-	@Column(name="auth_token")
-	private String authToken = UUID.randomUUID().toString();
-	
+	@Column(name="address")
+	private String address;
+		
 	@Column(name="added_on")
 	private Date addedOn = new Date();
 	

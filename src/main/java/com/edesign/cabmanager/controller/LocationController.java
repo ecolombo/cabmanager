@@ -18,6 +18,7 @@ import com.edesign.cabmanager.entity.Location;
 import com.edesign.cabmanager.service.LocationService;
 
 // CRUD operations for location
+// todo: implement ResponseDto, exception handling etc.
 
 @RestController
 public class LocationController {
