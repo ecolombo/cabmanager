@@ -14,7 +14,7 @@
 	<name>cabmanager-webservice-202309</name>
 	<description>Cab Manager (Capstone Project 03)</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
